@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <!-- database setup -->
+  <context-param>
+    <param-name>db.server</param-name>
+    <param-value>localhost</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.database</param-name>
+    <param-value>phyloviewer</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.user</param-name>
+    <param-value>phyloviewer</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db.password</param-name>
+    <param-value>phyloviewer</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.iplantc.phyloviewer.viewer.server.DatabaseListener</listener-class>
+  </listener>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>parseTree</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.ParseTree</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>parseTree</servlet-name>
+    <url-pattern>/parseTree</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>treeImage</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.TreeImageImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>treeImage</servlet-name>
+    <url-pattern>/phyloviewer/treeImage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>treeList</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.TreeListServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>treeList</servlet-name>
+    <url-pattern>/phyloviewer/treeList</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+    <servlet-name>renderTree</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.RenderTree</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>renderTree</servlet-name>
+    <url-pattern>/renderTree</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+    <servlet-name>nodeLayout</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.CombinedServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>nodeLayout</servlet-name>
+    <url-pattern>/phyloviewer/nodeLayout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>search</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.SearchServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>search</servlet-name>
+    <url-pattern>/phyloviewer/search</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>treeIntersect</servlet-name>
+    <servlet-class>org.iplantc.phyloviewer.viewer.server.IntersectTreeServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>treeIntersect</servlet-name>
+    <url-pattern>/phyloviewer/treeIntersect</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Phyloviewer.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

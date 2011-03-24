@@ -20,7 +20,18 @@ Source code is available at: https://github.com/iPlantCollaborativeOpenSource/iP
 
 
 ==INSTALLATION
-To install...
+git clone git://github.com/iPlantCollaborativeOpenSource/iPlant_phyloviewer.git
+
+To install all libraries and build standalone application:
+$ cd iPlant_phyloviewer
+$ mvn compile install
+
+To install libraries that the TR application depends on:
+
+$ cd iPlant_phyloviewer/libraries/phyloviewer-common
+$ mvn compile install
+$ cd ../phyloviewer-gwt-client
+$ mvn compile install
 
 
 ==BUILD INFORMATION
@@ -40,5 +51,13 @@ This code requires:
  * Java 1.6.0
 
 
+==USAGE
+Coming...
+
+
 ==ISSUES/BUGS/QUESTIONS
+Coming...
+
+
+==CONTRIBUTING
 Coming...

@@ -1,6 +1,8 @@
 phyloviewer
 ===========
 
+This is a technical solution to the scientific problem of visualizing phylogenetic relationships. It provides the visualization aspects needed.
+
 This is alpha code. It worked when we ran it, but no guarantees of any kind are made that it will work for anyone else anywhere.
 
 An update to this README is in progress.
@@ -14,4 +16,10 @@ DEPENDENCIES
 
 This code requires:
 
- * item 1
+ * Google Web Toolkit (GWT) 2.1.1
+ * iPlant phyloparser
+ * iPlant Viewer-Editor Framework
+ * org.json
+ * postgres jdbc
+ * postgis jdbc
+ * Java 1.6.0
